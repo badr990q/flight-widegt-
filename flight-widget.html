@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>حجز طيران</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            background-color: #f8f8f8;
+        }
+        #tp-widget {
+            margin: auto;
+            max-width: 800px;
+        }
+    </style>
+</head>
+<body>
+    <h2>احجز رحلتك الآن</h2>
+    <div id="tp-widget"></div>
+    <script>
+      (function() {
+        var script = document.createElement('script');
+        script.src = 'https://www.travelpayouts.com/widgets/flight_search_form.js';
+        script.async = true;
+        script.onload = function() {
+          new TpWidgetFlightSearch({
+            container: '#tp-widget',
+            locale: 'ar',
+            currency: 'IQD',
+            marker: '633920'
+          });
+        };
+        document.head.appendChild(script);
+      })();
+    </script>
+</body>
+</html>
